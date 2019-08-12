@@ -5,7 +5,16 @@ const sha1 = require('sha1')
 
 app.get('/', (req, res) => {
     console.log(req.query);
-    res.send('test222333');
+    let { signature, timestamp, nonce, echostr} = req.query;
+    let token = 'mmp';
+    let arr = [token, timestamp, nonce];
+    let pwd = sha1(arr.sort().join(''));
+
+    console.log(pwd);
+
+    if(pwd == signature && echostr) {
+        res.send(echostr);
+    }
 });
 
 let port = process.env.PORT || 3000;
