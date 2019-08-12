@@ -5,7 +5,7 @@ const sha1 = require('sha1')
 
 app.get('/', (req, res) => {
     console.log(req.query);
-    res.send('test222');
+    res.send('test222333');
 });
 
 let port = process.env.PORT || 3000;
