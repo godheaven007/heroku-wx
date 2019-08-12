@@ -4,7 +4,7 @@ const sha1 = require('sha1')
 
 
 app.get('/', (req, res) => {
-    res.send('test');
+    res.send('test222');
 });
 
 
